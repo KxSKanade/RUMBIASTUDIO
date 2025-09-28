@@ -1,0 +1,263 @@
+/* Register.css - Solo estilos para Register.jsx */
+
+/* Variables específicas para Register */
+:root {
+  --c1: #012E4A;
+  --c2: #036280;
+  --c3: #378BA4;
+  --c4: #81BECE;
+  --c5: #E8EDE7;
+  --white: #fff;
+  --shadow: 0 6px 24px rgba(1, 46, 74, .15);
+}
+
+/* Layout principal */
+.container-fluid {
+  padding: 0;
+}
+
+.h-100 {
+  height: 100vh;
+}
+
+.row {
+  margin: 0;
+}
+
+.row.h-100 {
+  height: 100vh;
+}
+
+/* Columnas */
+.col-md-4 {
+  padding: 0;
+}
+
+.col-md-8 {
+  padding: 0;
+}
+
+/* Lado izquierdo */
+.split-left {
+  background: var(--c1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Lado derecho */
+.split-right {
+  background: linear-gradient(135deg, var(--c3), var(--c4));
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="0,0 0,100 100,50" fill="rgba(255,255,255,0.05)"/><polygon points="100,100 100,0 0,50" fill="rgba(255,255,255,0.05)"/></svg>');
+  position: relative;
+}
+
+/* Brand */
+.brand {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+}
+
+/* Register Box */
+.register-box {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  margin-top: 3rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Títulos y texto */
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.register-box h2 {
+  color: var(--c1);
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+/* Formulario */
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--c1);
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--c2);
+  box-shadow: 0 0 0 2px rgba(3, 98, 128, 0.1);
+}
+
+.form-control::placeholder {
+  color: #999;
+}
+
+/* Validación de formulario */
+.form-control:invalid {
+  border-color: #dc3545;
+}
+
+.form-control:valid {
+  border-color: #28a745;
+}
+
+/* Botones */
+.btn {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--c2);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #024b62;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 98, 128, 0.3);
+}
+
+.w-100 {
+  width: 100%;
+}
+
+/* Enlaces */
+.login-link {
+  color: var(--c2);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: var(--c1);
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+/* Clases de Bootstrap necesarias para mostrar/ocultar */
+.d-none {
+  display: none;
+}
+
+.d-md-block {
+  display: block;
+}
+
+/* Scrollbar personalizada para el register-box */
+.register-box::-webkit-scrollbar {
+  width: 4px;
+}
+
+.register-box::-webkit-scrollbar-track {
+  background: var(--c5);
+  border-radius: 2px;
+}
+
+.register-box::-webkit-scrollbar-thumb {
+  background: var(--c4);
+  border-radius: 2px;
+}
+
+.register-box::-webkit-scrollbar-thumb:hover {
+  background: var(--c3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .split-left {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .brand {
+    position: static;
+    margin-bottom: 2rem;
+  }
+  
+  .register-box {
+    margin-top: 1rem;
+    padding: 2rem;
+    max-height: 90vh;
+  }
+  
+  .split-right {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .register-box {
+    padding: 1.5rem;
+  }
+  
+  .register-box h2 {
+    font-size: 1.3rem;
+  }
+  
+  .mb-3 {
+    margin-bottom: 0.8rem;
+  }
+  
+  .form-control {
+    padding: 0.6rem;
+  }
+}

@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -56,10 +57,16 @@ export default function Login() {
                 </a>
               </div>
             </form>
+            
           </div>
+          
         </div>
-        <div className="col-md-8 split-right d-none d-md-block"></div>
+        <div className="col-md-8 split-right d-none d-md-block">
+          <img src="/descarga.jpeg" alt="Carlos · Innovación" />
+        </div>
+        
       </div>
+      
     </div>
   );
 }

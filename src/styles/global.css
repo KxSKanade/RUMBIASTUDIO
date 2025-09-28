@@ -1,0 +1,72 @@
+/* global.css - Solo estilos básicos compartidos entre componentes */
+
+/* Variables globales */
+:root {
+  --c1: #012E4A;
+  --c2: #036280;
+  --c3: #378BA4;
+  --c4: #81BECE;
+  --c5: #E8EDE7;
+  --bg: #F7FAF9;
+  --text: #0f172a;
+  --muted: #495a6a;
+  --white: #fff;
+  --radius: 16px;
+  --shadow: 0 6px 24px rgba(1, 46, 74, .15);
+  --font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Reset básico */
+* { 
+  box-sizing: border-box; 
+}
+
+html, body { 
+  margin: 0; 
+  padding: 0; 
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text);
+  background: linear-gradient(180deg, var(--bg), var(--c5) 220%);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Elementos básicos */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+a {
+  color: var(--c2);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Solo utilidades muy básicas */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

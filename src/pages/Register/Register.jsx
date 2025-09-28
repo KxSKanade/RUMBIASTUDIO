@@ -1,6 +1,6 @@
-import React from "react";
+/* Register.jsx */
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Register.css"; 
+import "./Register.css";
 
 export default function Register() {
   return (
@@ -41,7 +41,9 @@ export default function Register() {
         </div>
 
         {/* Lado Derecho */}
-        <div className="col-md-8 split-right d-none d-md-block"></div>
+        <div className="col-md-8 split-right d-none d-md-block">
+          <img src="/descarga.jpeg" alt="imagen" />
+        </div>
       </div>
     </div>
   );

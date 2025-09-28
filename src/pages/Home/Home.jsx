@@ -1,12 +1,14 @@
 import React, { useRef, useState, useEffect } from "react";
-import "./styles.css";
+import "./Home.css";
 
 export default function App() {
   const trackRef = useRef(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+  const toggleMobileMenu = () => setMobileMenuOpen(!mobileMenuOpen);
 
   const scrollAmount = 300;
   const handleLeft = () => {
@@ -18,11 +20,25 @@ export default function App() {
 
   useEffect(() => {
     const onKey = (e) => {
-      if (e.key === "Escape") closeModal();
+      if (e.key === "Escape") {
+        closeModal();
+        setMobileMenuOpen(false);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  // Cerrar menú móvil al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (mobileMenuOpen && !e.target.closest('.nav')) {
+        setMobileMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [mobileMenuOpen]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,8 +60,25 @@ export default function App() {
             <a href="#beneficios">Beneficios</a>
             <a href="#valor">Mapa de valor</a>
             <a href="#comunidad">Comunidad</a>
-            <a href="/login"><button className="btn btn-primary">Inicia Sesion</button></a>
+            <a href="/login"><button className="btn btn-primary">Inicia Sesión</button></a>
           </nav>
+          <button 
+            className={`mobile-menu-toggle ${mobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Menú de navegación"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+        <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
+          <a href="#beneficios" onClick={() => setMobileMenuOpen(false)}>Beneficios</a>
+          <a href="#valor" onClick={() => setMobileMenuOpen(false)}>Mapa de valor</a>
+          <a href="#comunidad" onClick={() => setMobileMenuOpen(false)}>Comunidad</a>
+          <a href="/login" onClick={() => setMobileMenuOpen(false)}>
+            <button className="btn btn-primary">Inicia Sesión</button>
+          </a>
         </div>
       </header>
 
